@@ -47,7 +47,9 @@
 
 .welcome-component-title {
   font-size: 10rem;
-  color: white;
+  background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .welcome-effects-menu {
