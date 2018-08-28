@@ -23,8 +23,12 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .welcome-container {
@@ -33,16 +37,19 @@
   position: relative;
 
   background-color: black;
-
 }
 .welcome-component {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
 }
 
 .welcome-component-title {
   font-size: 10rem;
   color: white;
+}
+
+.welcome-effects-menu {
+  background-color: white;
 }
