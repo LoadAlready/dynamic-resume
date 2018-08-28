@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
 
 export default class WelcomePage extends Component {
   constructor(props) {
@@ -51,6 +50,8 @@ export default class WelcomePage extends Component {
     }
   }
 
+  onContinueClick = () => {};
+
   renderContent = () => {
     return (
       <fragment>
@@ -62,24 +63,47 @@ export default class WelcomePage extends Component {
             onChange={event => this.onEffectNameChange(event)}
             className="welcome-effects-menu"
           >
-            <MenuItem value="none">
+            <option className="welcome-effects-menu-item" value="none">
               <em>None</em>
-            </MenuItem>
-            <MenuItem value={"animated jello"}>Jello</MenuItem>
-            <MenuItem value={"animated flash"}>Flash</MenuItem>
-            <MenuItem value={"animated swing"}>Swing</MenuItem>
+            </option>
+            <option
+              className="welcome-effects-menu-item"
+              value={"animated jello"}
+            >
+              Jello
+            </option>
+            <option
+              className="welcome-effects-menu-item"
+              value={"animated flash"}
+            >
+              Flash
+            </option>
+            <option
+              className="welcome-effects-menu-item"
+              value={"animated swing"}
+            >
+              Swing
+            </option>
           </Select>
 
           {/* effect speed */}
           <Select
             value={this.state.currentEffectSpeed}
             onChange={event => this.onSpeedChange(event)}
-            className="welcome-effects-menu"
+            className="welcome-effects-menu welcome-effects-menu-center"
           >
-            <MenuItem value={"slow"}>2 Second</MenuItem>
-            <MenuItem value={"slower"}>3 Seconds</MenuItem>
-            <MenuItem value={"fast"}>800 MS</MenuItem>
-            <MenuItem value={"faster"}>500 MS</MenuItem>
+            <option className="welcome-effects-menu-item" value={"slow"}>
+              2 Second
+            </option>
+            <option className="welcome-effects-menu-item" value={"slower"}>
+              3 Seconds
+            </option>
+            <option className="welcome-effects-menu-item" value={"fast"}>
+              800 MS
+            </option>
+            <option className="welcome-effects-menu-item" value={"faster"}>
+              500 MS
+            </option>
           </Select>
 
           {/* effect repeat */}
@@ -88,10 +112,18 @@ export default class WelcomePage extends Component {
             onChange={event => this.onRepeatChange(event)}
             className="welcome-effects-menu"
           >
-            <MenuItem value={"infinite"}>On</MenuItem>
-            <MenuItem value={"Off"}>Off</MenuItem>
+            <option className="welcome-effects-menu-item" value={"infinite"}>
+              On
+            </option>
+            <option className="welcome-effects-menu-item" value={"Off"}>
+              Off
+            </option>
           </Select>
         </form>
+        {/* continue to content */}
+        <div className="welcome-page-continue">
+          <button onClick={this.onContinueClick}>Enough Already</button>
+        </div>
       </fragment>
     );
   };
